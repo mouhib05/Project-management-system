@@ -1,0 +1,28 @@
+<main class="main-content">
+  <section class="page-shell">
+    <div class="page-card">
+      <div class="page-header">
+        <h1>Project List</h1>
+        <p>Review the active projects and track their progress.</p>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" placeholder="Search projects" [(ngModel)]="searchText" />
+        <button type="button" (click)="searchProjects()">Search Project</button>
+      </div>
+
+      <p *ngIf="filteredProjects.length === 0">No projects found.</p>
+
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of filteredProjects">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.description }}</p>
+          <div class="progress-row">
+            <span>Created: {{ project.created_at | date }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
