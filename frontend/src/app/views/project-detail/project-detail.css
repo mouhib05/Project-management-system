@@ -1,4 +1,4 @@
-/* Futuristic Project Details Redesign */
+
 
 .page-container {
     padding: 2rem;
@@ -24,7 +24,7 @@
     }
 }
 
-/* Header Section */
+
 .project-header {
     border-radius: 24px;
     padding: 3rem;
@@ -160,7 +160,7 @@
     color: var(--primary) !important;
 }
 
-/* Progress Bar Redesign */
+
 .progress-container {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
@@ -237,7 +237,7 @@
     }
 }
 
-/* Tasks Section */
+
 .task-section {
     display: flex;
     flex-direction: column;
@@ -272,7 +272,7 @@
     min-height: 400px;
 }
 
-/* Responsiveness */
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;

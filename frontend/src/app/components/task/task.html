@@ -4,7 +4,7 @@
     @if(data.length!=0)
     {@for (task of data; track task.id) {
     <li class="task-item">
-        <!-- Main Task Content -->
+        
         <div class="task-main">
             <div class="task-info">
                 <h3 class="task-title">{{ task.title }}</h3>
@@ -14,14 +14,14 @@
                 </div>
             </div>
 
-            <!-- Expand Button -->
+            
             <button class="expand-btn" (click)="toggleExpand(task.id)" [attr.aria-expanded]="isExpanded(task.id)">
                 <span class="expand-icon">{{ isExpanded(task.id) ? '−' : '+' }}</span>
                 <span class="expand-text">{{ isExpanded(task.id) ? 'Hide' : 'Show' }} Sub-tasks</span>
             </button>
         </div>
 
-        <!-- Sub-Tasks (Expandable Section) -->
+        
         @if ((task.subTasks != null && task.subTasks.length!=0) && task.id==expandedTaskId) {
         <div class="sub-tasks">
             <h4>Sub-Tasks ({{ task.subTasks.length }})</h4>

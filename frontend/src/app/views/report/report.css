@@ -1,4 +1,4 @@
-/* Futuristic Report Dashboard Redesign */
+
 .dashboard-page-container {
     padding: 2rem;
     position: relative;
@@ -16,7 +16,7 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header */
+
 .report-header {
     border-radius: 24px;
     padding: 3rem;
@@ -68,7 +68,7 @@
     margin: 0;
 }
 
-/* Sections */
+
 .report-sections-wrapper {
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@
     border-radius: 2px;
 }
 
-/* Scroll Wrappers */
+
 .scroll-wrapper {
     position: relative;
     width: 100%;
@@ -118,7 +118,7 @@
     padding-left: 10px;
     padding-right: 10px;
     scroll-behavior: smooth;
-    /* Custom Scrollbar for the row */
+    
     scrollbar-width: thin;
     scrollbar-color: rgba(67, 97, 238, 0.5) rgba(0, 0, 0, 0.05);
 }

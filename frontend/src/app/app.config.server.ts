@@ -8,7 +8,7 @@ import { routes } from './app.routes';
 const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(),
-    // ✅ CRITICAL: Provide router again for server with same routes
+    
     provideRouter(routes)
   ]
 };

@@ -11,9 +11,10 @@
         <button type="button" (click)="searchProjects()">Search Project</button>
       </div>
 
-      <p *ngIf="filteredProjects.length === 0">No projects found.</p>
+      <p *ngIf="filteredProjects.length === 0">No projects Found.</p>
 
       <div class="projects-grid">
+
         <div class="project-card" *ngFor="let project of filteredProjects">
           <h2>{{ project.title }}</h2>
           <p>{{ project.description }}</p>

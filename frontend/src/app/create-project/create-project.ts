@@ -61,7 +61,6 @@
         next: (createdProject: any) => {
           console.log('Project created:', createdProject);
 
-          // no tasks → done
           if (this.tasks.length === 0) {
             alert('Project created successfully! ✅');
             this.router.navigate(['/project-list']);
@@ -73,13 +72,12 @@
           this.tasks.forEach(task => {
             this.projectService.createTask({
               title: task.title,
-              project_id: createdProject.id,  // ← lowercase id
+              project_id: createdProject.id,
               created_by: 1
             }).subscribe({
               next: (createdTask: any) => {
                 console.log('Task created:', createdTask);
 
-                // no subtasks → count task as done
                 if (task.subtasks.length === 0) {
                   tasksCompleted++;
                   if (tasksCompleted === this.tasks.length) {
@@ -89,12 +87,11 @@
                   return;
                 }
 
-                // save subtasks
                 let subtasksCompleted = 0;
                 task.subtasks.forEach(subtaskTitle => {
                   this.projectService.createSubtask({
                     title: subtaskTitle,
-                    task_id: createdTask.id,  // ← lowercase id
+                    task_id: createdTask.id,
                     status: 'pending',
                     weight_percentage: 0,
                     assigned_to: null

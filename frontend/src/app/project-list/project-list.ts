@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProjectService } from '../services/project';
 
-@Component({                          // ← this was removed
+@Component({
   selector: 'app-project-list',
   standalone: true,
   imports: [CommonModule, FormsModule],

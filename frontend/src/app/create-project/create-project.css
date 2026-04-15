@@ -79,7 +79,6 @@ button {
   color: #ffffff;
 }
 
-/* ✅ removed task-item from here */
 .section-title,
 .footer-actions {
   display: flex;
@@ -88,10 +87,9 @@ button {
   gap: 12px;
 }
 
-/* ✅ task-item now has its own correct rule */
 .task-item {
   display: flex;
-  flex-direction: column;  /* subtask form appears below */
+  flex-direction: column;
   gap: 12px;
   padding: 16px 0;
   border-top: 1px solid var(--border);

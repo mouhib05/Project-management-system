@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Servicetasks } from '../../services/servicetasks';
-//import { error } from 'console';
+
 
 export interface SubTask {
   id: number;
@@ -37,7 +37,7 @@ export class TaskComponent implements OnInit {
       next: (subtasks) => {
         console.log("subtasks.............." + subtasks);
         subtasks.forEach((st) => {
-          //console.log("starts here" + this.data + "this is the console log");
+          
           if (this.data.find((t) => t.id == st.task_id)) {
 
             this.data.find((t) => t.id == st.task_id)?.subTasks.push(st);
@@ -66,7 +66,7 @@ export class TaskComponent implements OnInit {
 
 
 
-  // Track which tasks are expanded
+  
   expandedTaskId: number | null = null;
 
   toggleExpand(taskId: number): void {

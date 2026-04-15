@@ -1,4 +1,4 @@
-/* Main List Container */
+
 .dark-list {
     list-style: none;
     padding: 0;
@@ -11,7 +11,7 @@
     min-width: 400px;
 }
 
-/* Task Item */
+
 .task-item {
     border-bottom: 1px solid #e2e8f0;
     padding: 0;
@@ -27,7 +27,7 @@
     border-bottom: none;
 }
 
-/* Main Task Content */
+
 .task-main {
     display: flex;
     justify-content: space-between;
@@ -52,7 +52,7 @@
     color: #a0a0a0;
 }
 
-/* Task Meta (Badges & Date) */
+
 .task-meta {
     display: flex;
     gap: 10px;
@@ -100,7 +100,7 @@
     gap: 5px;
 }
 
-/* Expand Button */
+
 .expand-btn {
     background-color: #f1f5f9;
     border: 1px solid #e2e8f0;
@@ -128,7 +128,7 @@
     line-height: 1;
 }
 
-/* Sub-Tasks Section */
+
 .sub-tasks {
     color: #000;
     background-color: #f8f8f8;
@@ -192,7 +192,7 @@
     color: #666;
 }
 
-/* Hover Effect for Task Item */
+
 .task-item:hover .task-main {
     background-color: #fafafa;
 }
@@ -201,7 +201,7 @@
     transition: background-color 0.2s ease;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
     .task-main {
         flex-direction: column;

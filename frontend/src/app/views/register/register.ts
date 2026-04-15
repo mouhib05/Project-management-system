@@ -35,7 +35,7 @@ export class Register {
     }
     this.isSubmitting = true;
     setTimeout(() => {
-      this.auth.register();//this.userDataForm.value.name || 'User'
+      this.auth.register();
       this.isSubmitting = false;
       this.router.navigate(['/']);
     }, 500);

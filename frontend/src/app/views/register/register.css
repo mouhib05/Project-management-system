@@ -1,4 +1,4 @@
-/* Variables for easy theming */
+
 :root {
     --primary-color: var(--primary);
     --primary-hover: var(--primary-dark);
@@ -12,7 +12,7 @@
     --input-focus-ring: rgba(67, 97, 238, 0.2);
 }
 
-/* Main Container */
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
     padding: 20px;
 }
 
-/* Form Card */
+
 form {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
@@ -38,7 +38,7 @@ form {
     box-sizing: border-box;
 }
 
-/* Header */
+
 form h2 {
     margin: 0 0 1.5rem;
     color: var(--text-color);
@@ -48,7 +48,7 @@ form h2 {
     letter-spacing: -0.025em;
 }
 
-/* Form Groups */
+
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -61,7 +61,7 @@ form h2 {
     font-size: 0.875rem;
 }
 
-/* Input Fields */
+
 .form-control {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -74,14 +74,14 @@ form h2 {
     box-sizing: border-box;
 }
 
-/* Input Focus */
+
 .form-control:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 4px var(--input-focus-ring);
 }
 
-/* Input Invalid State */
+
 .form-control.is-invalid {
     border-color: var(--error-color);
     background-color: #fef2f2;
@@ -91,12 +91,12 @@ form h2 {
     box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
 }
 
-/* Input Valid State (Optional) */
+
 .form-control.is-valid {
     border-color: var(--success-color);
 }
 
-/* Error Messages */
+
 .error-message {
     display: block;
     color: var(--error-color);
@@ -106,7 +106,7 @@ form h2 {
     animation: slideDown 0.2s ease-out;
 }
 
-/* Submit Button */
+
 
 .btn-primary:hover:not(:disabled) {
     background-color: var(--primary-hover);
@@ -136,7 +136,7 @@ form h2 {
     margin-top: 0.5rem;
 }
 
-/* Animations */
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -149,7 +149,7 @@ form h2 {
     }
 }
 
-/* Responsive */
+
 @media (max-width: 480px) {
     form {
         padding: 1.5rem;
