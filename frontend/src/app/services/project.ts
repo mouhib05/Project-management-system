@@ -22,6 +22,9 @@ export class ProjectService {
     return this.http.get(`${this.apiUrl}/projects/`);
   }
   getSubtasks(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/tasks/subtasks`);
+    return this.http.get(`${this.apiUrl}/subtasks`);
+  }
+  createSubtask(subtask: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/subtasks`, subtask);
   }
 }

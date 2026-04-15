@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProjectService } from '../services/project';
 
-@Component({
+@Component({                          // ← this was removed
   selector: 'app-project-list',
   standalone: true,
   imports: [CommonModule, FormsModule],
@@ -16,27 +16,30 @@ export class ProjectList implements OnInit {
   filteredProjects: any[] = [];
   searchText = '';
 
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.projectService.getProjects().subscribe({
       next: (data: any) => {
-        setTimeout(() => {
-          this.projects = data;
-          this.filteredProjects = [...data];
-        }, 100);
+        this.projects = data;
+        this.filteredProjects = [...data];
+        this.cdr.detectChanges();
       },
       error: (err: any) => console.error(err)
     });
   }
-  
+
   searchProjects() {
     if (this.searchText.trim() === '') {
-      this.filteredProjects = this.projects;
+      this.filteredProjects = [...this.projects];
     } else {
       this.filteredProjects = this.projects.filter(project =>
         project.title.toLowerCase().includes(this.searchText.toLowerCase())
       );
     }
+    this.cdr.detectChanges();
   }
 }

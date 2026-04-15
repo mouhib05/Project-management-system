@@ -79,8 +79,8 @@ button {
   color: #ffffff;
 }
 
+/* ✅ removed task-item from here */
 .section-title,
-.task-item,
 .footer-actions {
   display: flex;
   align-items: center;
@@ -88,9 +88,59 @@ button {
   gap: 12px;
 }
 
+/* ✅ task-item now has its own correct rule */
 .task-item {
+  display: flex;
+  flex-direction: column;  /* subtask form appears below */
+  gap: 12px;
   padding: 16px 0;
   border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.task-item h3 {
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.task-item > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.subtask-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  width: 100%;
+}
+
+.subtask-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .status-pill {
@@ -114,17 +164,4 @@ button {
     flex-direction: column;
     align-items: stretch;
   }
-}
-.task-item h3 {
-  word-break: break-word;
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-.task-item > div {
-  flex: 1;              
-  min-width: 0;         
-}
-
-.task-item button {
-  flex-shrink: 0;       
 }

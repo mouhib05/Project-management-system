@@ -34,12 +34,38 @@
         </div>
         <p *ngIf="tasks.length === 0">No tasks added yet.</p>
 
-        <div class="task-item" *ngFor="let task of tasks ; let i = index">
-          <div>
-            <h3>{{ task.title }}</h3>
-          </div>
-          <button type="button" class="secondary-btn" (click)="removeTask(i)">remove task</button>
-          <span class="primary-btn">add subtask</span>
+       <div class="task-item" *ngFor="let task of tasks; let i = index">
+  <div class="task-header">
+    <div>
+      <h3>{{ task.title }}</h3>
+    </div>
+    <div class="task-buttons">
+      <button type="button" class="primary-btn" (click)="toggleSubtaskForm(i)">
+        {{ task.showForm ? 'Hide Subtasks' : 'Add Subtask' }}
+      </button>
+      <button type="button" class="secondary-btn" (click)="removeTask(i)">
+        Remove Task
+      </button>
+    </div>
+  </div>
+
+  <!-- subtask form shown only when showForm is true -->
+  <div class="subtask-form" *ngIf="task.showForm">
+    <input 
+      [(ngModel)]="task.newSubtask" 
+      type="text" 
+      placeholder="Enter subtask title" />
+    <button type="button" class="primary-btn" (click)="addSubtask(i)">
+      Add
+    </button>
+    <p *ngIf="task.subtasks.length === 0">No subtasks added yet.</p>
+    <div class="subtask-item" *ngFor="let subtask of task.subtasks; let j = index">
+      <span>{{ subtask }}</span>
+      <button type="button" class="secondary-btn" (click)="removeSubtask(i, j)">🗑️</button>
+    </div>
+  </div>
+
+         
       </div>
     </div>
 </div>

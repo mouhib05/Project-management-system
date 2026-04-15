@@ -4,7 +4,7 @@ from sqlmodel import SQLModel, Session,select
 #from models import Tasks,Subtasks
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import auth, users,tasks,projects
+from routes import auth, users,tasks,projects,subtask
 
 app = FastAPI()
 app.add_middleware(
@@ -20,3 +20,4 @@ app.include_router(users.router)
 
 app.include_router(tasks.router)
 app.include_router(projects.router)
+app.include_router(subtask.router)
